@@ -14,7 +14,7 @@
         <TextBlock Margin="5">Username</TextBlock>
         <TextBox Margin="5"/>
         <TextBlock Margin="5">Password</TextBlock>
-        <TextBox  Margin="5"/>
+        <PasswordBox  Margin="5"/>
         <Button  Margin="5">Register</Button>
     </StackPanel>
 </UserControl>
