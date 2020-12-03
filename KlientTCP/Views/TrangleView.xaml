@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="KlientTCP.Views.TrangleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KlientTCP.Views"
+             mc:Ignorable="d" 
+             Background="#333"
+             Foreground="#fff"
+             FontSize="20"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
+        <TextBlock Margin="5">Check Triangle Type</TextBlock>
+        <TextBox Margin="5" Text="a" />
+        <TextBox Margin="5" Text="b" />
+        <TextBox Margin="5" Text="c" />
+        <Button  Margin="5">Submit</Button>
+    </StackPanel>
+</UserControl>

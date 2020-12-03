@@ -9,6 +9,29 @@
         Foreground="#fff"
         Title="ShellView" Height="450" Width="800">
     <Grid>
-        <TextBlock FontSize="100" >Hello World!</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25">TCP Client</TextBlock>
+        <Button Grid.Column="6" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadLoginPage">Login</Button>
+        <Button Grid.Column="7" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadRegisterPage">Register</Button>
+
+        <ContentControl x:Name="ActiveItem" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="7"/>
     </Grid>
 </Window>
