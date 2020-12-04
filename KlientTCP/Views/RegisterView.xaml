@@ -9,12 +9,13 @@
              Foreground="#fff"
              FontSize="20"
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
-        <TextBlock FontSize="24" HorizontalAlignment="Center">Register</TextBlock>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <TextBlock FontSize="40" Margin="5" HorizontalAlignment="Center">Register</TextBlock>
         <TextBlock Margin="5">Username</TextBlock>
-        <TextBox Margin="5"/>
+        <TextBox Margin="5" x:Name="Username"/>
         <TextBlock Margin="5">Password</TextBlock>
-        <PasswordBox  Margin="5"/>
-        <Button  Margin="5">Register</Button>
+        <PasswordBox  Margin="5" x:Name="Password"/>
+        <Button  Margin="5" x:Name="HandleButtonClick">Register</Button>
+        <TextBlock Text="{Binding Path=Error, Mode=OneWay}" Foreground="Red" FontSize="16" HorizontalAlignment="Center"/>
     </StackPanel>
 </UserControl>

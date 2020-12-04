@@ -9,8 +9,8 @@
              Foreground="#fff"
              FontSize="20"
              d:DesignHeight="500" d:DesignWidth="500">
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
-        <TextBlock FontSize="24" HorizontalAlignment="Center">Login</TextBlock>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <TextBlock FontSize="40" Margin="5" HorizontalAlignment="Center">Login</TextBlock>
         <TextBlock Margin="5">Username</TextBlock>
         <TextBox x:Name="Username" Margin="5"/>
         <TextBlock Margin="5">Password</TextBlock>

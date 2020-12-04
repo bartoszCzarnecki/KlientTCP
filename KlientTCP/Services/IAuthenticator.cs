@@ -4,7 +4,7 @@
     {
         bool IsLoggedIn { get; }
 
-        void Login(string username, string password);
-        void Register(string username, string password);
+        bool Login(string username, string password);
+        bool Register(string username, string password);
     }
 }

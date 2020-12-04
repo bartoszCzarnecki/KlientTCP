@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="KlientTCP.Views.WelcomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KlientTCP.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25">TCP Client</TextBlock>
+            <Button Grid.Column="6" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadLoginPage">Login</Button>
+            <Button Grid.Column="7" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadRegisterPage">Register</Button>
+
+            <ContentControl x:Name="ActiveItem" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="7"/>
+        </Grid>
+</UserControl>

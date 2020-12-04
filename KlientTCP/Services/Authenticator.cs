@@ -10,14 +10,18 @@ namespace KlientTCP.Services
     public class Authenticator : IAuthenticator
     {
         private User _currentUser;
-        public void Login(string username, string password)
+        public bool Login(string username, string password)
         {
-            this._currentUser = new User(username, password);
+            // TODO
+            _currentUser = new User(username, password);
+            return true;
         }
 
-        public void Register(string username, string password)
+        public bool Register(string username, string password)
         {
-            this._currentUser = new User(username, password);
+            // TODO
+            _currentUser = new User(username, password);
+            return true;
         }
 
         public bool IsLoggedIn => _currentUser != null;
