@@ -8,20 +8,25 @@ using System.Threading.Tasks;
 namespace KlientTCP.ViewModels
 {
     public class ShellViewModel : Conductor<object>
-    { 
-        public ShellViewModel()
+    {
+        private LoginViewModel _loginVM;
+        private RegisterViewModel _registerVM;
+
+        public ShellViewModel(LoginViewModel loginVM, RegisterViewModel registerVM)
         {
-            LoadLoginPage();          
+            _loginVM = loginVM;
+            _registerVM = registerVM;
+            LoadLoginPage();
         }
 
         public void LoadLoginPage()
         {
-            ActivateItem(new LoginViewModel());
+            ActivateItem(_loginVM);
         }
 
         public void LoadRegisterPage()
         {
-            ActivateItem(new RegisterViewModel());
+            ActivateItem(_registerVM);
         }
     }
 }

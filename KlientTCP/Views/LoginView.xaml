@@ -12,9 +12,10 @@
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
         <TextBlock FontSize="24" HorizontalAlignment="Center">Login</TextBlock>
         <TextBlock Margin="5">Username</TextBlock>
-        <TextBox Margin="5"/>
+        <TextBox x:Name="Username" Margin="5"/>
         <TextBlock Margin="5">Password</TextBlock>
-        <PasswordBox  Margin="5"/>
-        <Button  Margin="5">Login</Button>
-     </StackPanel>
+        <PasswordBox x:Name="Password" Margin="5"/> 
+        <Button x:Name="HandleButtonClick" Margin="5">Login</Button>
+        <TextBlock Text="{Binding Path=Error, Mode=OneWay}" Foreground="Red" FontSize="16" HorizontalAlignment="Center"/>
+    </StackPanel>
 </UserControl>
