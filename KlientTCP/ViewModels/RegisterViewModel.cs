@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using KlientTCP.Events;
+using KlientTCP.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,15 @@ namespace KlientTCP.ViewModels
     {
         private string _username;
         private string _password;
+        private string _error;
+        private IAuthenticator _authenticator;
+        private IEventAggregator _aggregator;
+
+        public RegisterViewModel(IAuthenticator authenticator, IEventAggregator aggregator)
+        {
+            _authenticator = authenticator;
+            _aggregator = aggregator;
+        }
 
         public string Username
         {
@@ -31,10 +42,30 @@ namespace KlientTCP.ViewModels
             }
         }
 
+        public string Error
+        {
+            get { return _error; }
+            set
+            {
+                _error = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
+
         public void HandleButtonClick()
         {
-            if (String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password))
+            Error = "";
+
+            if (String.IsNullOrWhiteSpace(Username) || String.IsNullOrWhiteSpace(Password))
             {
+                Error = "Username and Password are required";
+            }
+            else
+            {
+                if (_authenticator.Register(Username, Password))
+                {
+                    _aggregator.PublishOnUIThread(new LoginEvent());
+                }
             }
         }
     }
