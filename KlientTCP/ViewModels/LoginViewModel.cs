@@ -55,6 +55,7 @@ namespace KlientTCP.ViewModels
 
         public void HandleButtonClick()
         {
+            // Tu sie znajduje kod, który zostanie wywołany po wcisnieciu przycisku
             Error = "";
 
             if (String.IsNullOrWhiteSpace(Username) || String.IsNullOrWhiteSpace(Password))
@@ -62,8 +63,10 @@ namespace KlientTCP.ViewModels
                 Error = "Username and Password are required";
             } else
             {
-                if(_authenticator.Login(Username, Password))
+                // Wywoływanie metody Login z serwisu Authenticator
+                if (_authenticator.Login(Username, Password))
                 {
+                    // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
                 }
             }

@@ -45,6 +45,10 @@ namespace KlientTCP.ViewModels
 
         public void HandleButtonClick()
         {
+            /* Kod, który zostanie wywołany po wcisnieciu przycisku
+             * Proponuje stworzyc nowy serwis na przykladzie `Authenticator`
+             * I trzeba będzie go dodac tak samo w pliku Bootstrapper.cs
+             */
 
         }
     }

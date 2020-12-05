@@ -54,6 +54,7 @@ namespace KlientTCP.ViewModels
 
         public void HandleButtonClick()
         {
+            // Tu sie znajduje kod, który zostanie wywołany po wcisnieciu przycisku
             Error = "";
 
             if (String.IsNullOrWhiteSpace(Username) || String.IsNullOrWhiteSpace(Password))
@@ -62,8 +63,10 @@ namespace KlientTCP.ViewModels
             }
             else
             {
+                // Wywoływanie metody Register z serwisu Authenticator
                 if (_authenticator.Register(Username, Password))
                 {
+                    // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
                 }
             }

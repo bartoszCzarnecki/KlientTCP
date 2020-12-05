@@ -33,11 +33,13 @@ namespace KlientTCP.ViewModels
 
         public void Handle(LoginEvent message)
         {
+            // Aktywuje dashboard, gdy zostanie wywołany LoginEvent
             ActivateItem(_dashboardVM);
         }
 
         public void Handle(LogoutEvent message)
         {
+            // Aktywuje welcome view, gdy zostanie wywolany LogoutEvent
             ActivateItem(_welcomeVM);
         }
     }

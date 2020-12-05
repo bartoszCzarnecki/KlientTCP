@@ -31,6 +31,10 @@ namespace KlientTCP
         {
             _container.Instance(_container);
 
+            /*
+             * Tworzenie singletonów, w aplikacji będzie tylko jedna instancja tych klas,
+             * ale przez konstruktor wstrzykujemy interfejsy, a nie klasy
+             */
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()

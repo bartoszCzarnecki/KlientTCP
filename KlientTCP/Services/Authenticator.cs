@@ -12,15 +12,27 @@ namespace KlientTCP.Services
         private User _currentUser;
         public bool Login(string username, string password)
         {
-            // TODO
+            // Tu dodaj logike logowania
             _currentUser = new User(username, password);
             return true;
         }
 
         public bool Register(string username, string password)
         {
-            // TODO
+            // Tu dodaj logike rejestracji
             _currentUser = new User(username, password);
+            return true;
+        }
+
+        public bool ChangePassword(string username, string password)
+        {
+            // Tu dodaj logike zmiany hasla
+            return true;
+        }
+
+        public bool DeleteUser(string username, string password)
+        {
+            // Tu dodaj logike usuwania uzytkownika
             return true;
         }
 
