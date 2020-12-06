@@ -14,10 +14,12 @@ namespace KlientTCP.ViewModels
         private string _password2;
         private string _error;
         private IAuthenticator _authenticator;
+        private IServerCommunication _communication;
 
-        public ChangePasswordViewModel(IAuthenticator authenticator)
+        public ChangePasswordViewModel(IAuthenticator authenticator, IServerCommunication communication)
         {
             _authenticator = authenticator;
+            _communication = communication;
         }
 
         public string Password
@@ -64,7 +66,7 @@ namespace KlientTCP.ViewModels
             }
             else
             {
-                // _authenticator.ChangePassword(Password);
+                _authenticator.ChangePassword(Password, _communication);
             }
         }
     }

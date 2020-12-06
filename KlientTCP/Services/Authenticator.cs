@@ -46,15 +46,28 @@ namespace KlientTCP.Services
             }
         }
 
-        public bool ChangePassword(string username, string password)
+        public bool ChangePassword(string password, IServerCommunication communication)
         {
-            // Tu dodaj logike zmiany hasla
-            return true;
+            communication.SendMessage("1");
+            communication.GetMessage();
+            communication.SendMessage(_currentUser.Password + " " + password);
+            string msg = communication.GetMessage().Substring(0, 5);
+            if (msg == "Ktora")
+            {
+                _currentUser.Password = password;
+                return true;
+            }
+            else
+            {
+                // Error
+                return false;
+            }
         }
 
-        public bool DeleteUser(string username, string password)
+        public bool DeleteAccount(IServerCommunication communication)
         {
-            // Tu dodaj logike usuwania uzytkownika
+            communication.SendMessage("3");
+            communication.GetMessage();
             return true;
         }
 
