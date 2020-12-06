@@ -16,6 +16,7 @@
             <TextBox Margin="5" Text="b" x:Name="B"/>
             <TextBox Margin="5" Text="c" x:Name="C"/>
             <Button  Margin="5" x:Name="HandleButtonClick">Submit</Button>
+            <TextBlock Text="{Binding Path=Result, Mode=OneWay}" FontSize="40" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </UserControl>

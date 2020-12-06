@@ -12,6 +12,7 @@ namespace KlientTCP.ViewModels
         private string _a;
         private string _b;
         private string _c;
+        private string _result;
 
         public string A
         {
@@ -43,12 +44,24 @@ namespace KlientTCP.ViewModels
             }
         }
 
+        public string Result
+        {
+            get { return _result; }
+            set
+            {
+                _result = value;
+                NotifyOfPropertyChange(() => Result);
+            }
+        }
+
         public void HandleButtonClick()
         {
             /* Kod, który zostanie wywołany po wcisnieciu przycisku
              * Proponuje stworzyc nowy serwis na przykladzie `Authenticator`
              * I trzeba będzie go dodac tak samo w pliku Bootstrapper.cs
              */
+
+            Result = "Trójkat ostrokątny";
 
         }
     }
