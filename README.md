@@ -6,11 +6,11 @@ Aplikacja komunikuje się ze zbudowanym wcześniej serwerem TCP.
 
 ## Technologie i Architektura Aplikacji
 
-# WPF
+### WPF
 
 Technologia Windows Presentation Foundation to jedno z najlepszych rozwiązań do tworzenia aplikacji okienkowych napisanych w języku C# działających pod kontrolą systemu Windows.
 
-# MVVM
+### MVVM
 
 MVVM (Model-View-ViewModel) jest to wzorzec architektoniczny trójwarstowy, którego głównym celem jest wyraźne oddzielenie warstw (szczególnie Widoku od warstwy pośredniej – ViewModelu).
 
@@ -18,6 +18,6 @@ MVVM (Model-View-ViewModel) jest to wzorzec architektoniczny trójwarstowy, któ
 - ViewModel - warstwa środkowa, jest pośrednikiem pomiędzy widokiem i modelem. Z ViewModel-a mamy kontrolę nad widokiem.
 - Model - ostatnia warstwa, zapewnia dostęp do danych.
 
-# Caliburn Micro
+### Caliburn Micro
 
 Caliburn Micro jest frameworkiem, który upraszcza budowanie aplikacji WPF w architekturze MVVM.
