@@ -26,7 +26,6 @@ namespace KlientTCP.ViewModels
             _changePasswordVM = changePasswordVM;
             _deleteAccountVM = deleteAccountVM;
             _aggregator = aggregator;
-            LoadTrianglePage();
         }
 
         public void LoadTrianglePage()
