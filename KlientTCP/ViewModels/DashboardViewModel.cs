@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KlientTCP.Services;
 
 namespace KlientTCP.ViewModels
 {
@@ -14,18 +15,21 @@ namespace KlientTCP.ViewModels
         private ChangePasswordViewModel _changePasswordVM;
         private DeleteAccountViewModel _deleteAccountVM;
         private IEventAggregator _aggregator;
+        private IServerCommunication _communication;
 
         public DashboardViewModel(
             TriangleViewModel triangleVM,
             ChangePasswordViewModel changePasswordVM,
             DeleteAccountViewModel deleteAccountVM,
-            IEventAggregator aggregator
+            IEventAggregator aggregator,
+            IServerCommunication communication
             )
         {
             _triangleVM = triangleVM;
             _changePasswordVM = changePasswordVM;
             _deleteAccountVM = deleteAccountVM;
-            _aggregator = aggregator;
+            _aggregator = aggregator; 
+            _communication = communication;
         }
 
         public void LoadTrianglePage()
@@ -45,7 +49,7 @@ namespace KlientTCP.ViewModels
 
         public void Logout()
         {
-            _aggregator.PublishOnUIThread(new LogoutEvent());
+            _aggregator.PublishOnUIThread(new LogoutEvent(_communication));
         }
     }
 }
