@@ -8,10 +8,10 @@
              Foreground="#fff"
              FontSize="20"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1000">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
-            <TextBlock Margin="5">Check Triangle Type</TextBlock>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="5" FontSize="40">Check Triangle Type</TextBlock>
             <TextBox Margin="5" Text="a" x:Name="A" />
             <TextBox Margin="5" Text="b" x:Name="B"/>
             <TextBox Margin="5" Text="c" x:Name="C"/>

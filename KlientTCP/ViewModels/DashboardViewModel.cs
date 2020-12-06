@@ -11,11 +11,20 @@ namespace KlientTCP.ViewModels
     public class DashboardViewModel : Conductor<object>
     {
         private TriangleViewModel _triangleVM;
+        private ChangePasswordViewModel _changePasswordVM;
+        private DeleteAccountViewModel _deleteAccountVM;
         private IEventAggregator _aggregator;
 
-        public DashboardViewModel(TriangleViewModel triangleVM, IEventAggregator aggregator)
+        public DashboardViewModel(
+            TriangleViewModel triangleVM,
+            ChangePasswordViewModel changePasswordVM,
+            DeleteAccountViewModel deleteAccountVM,
+            IEventAggregator aggregator
+            )
         {
             _triangleVM = triangleVM;
+            _changePasswordVM = changePasswordVM;
+            _deleteAccountVM = deleteAccountVM;
             _aggregator = aggregator;
             LoadTrianglePage();
         }
@@ -25,14 +34,14 @@ namespace KlientTCP.ViewModels
             ActivateItem(_triangleVM);
         }
 
-        public void LoadPasswordChangePage()
+        public void LoadChangePasswordPage()
         {
-
+            ActivateItem(_changePasswordVM);
         }
 
         public void LoadDeleteAccountPage()
         {
-
+            ActivateItem(_deleteAccountVM);
         }
 
         public void Logout()
