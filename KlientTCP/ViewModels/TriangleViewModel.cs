@@ -65,8 +65,21 @@ namespace KlientTCP.ViewModels
 
         public void HandleButtonClick()
         {
-            Result = _mathOperation.TriangleType(A + " " + B + " " + C, _communication);
+            Result = "";
 
+            if (IsInteger(A) && IsInteger(B) && IsInteger(C))
+            {
+                Result = _mathOperation.TriangleType(A + " " + B + " " + C, _communication);
+            } else
+            {
+                Result = "A, B and C must be integers";
+            }
+
+        }
+
+        private bool IsInteger(string number)
+        {
+            return int.TryParse(number, out _);
         }
     }
 }

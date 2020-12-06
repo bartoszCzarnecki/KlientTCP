@@ -70,6 +70,9 @@ namespace KlientTCP.ViewModels
                 {
                     // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
+                } else
+                {
+                    Error = "Server error, please try again";
                 }
             }
         }

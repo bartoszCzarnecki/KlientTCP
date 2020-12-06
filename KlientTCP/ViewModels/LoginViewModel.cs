@@ -71,6 +71,10 @@ namespace KlientTCP.ViewModels
                     // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
                 }
+                else
+                {
+                    Error = "Invalid username or password";
+                }
             }
         }
     }
