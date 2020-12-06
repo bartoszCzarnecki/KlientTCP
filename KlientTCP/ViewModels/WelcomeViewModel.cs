@@ -12,6 +12,7 @@ namespace KlientTCP.ViewModels
     {
         private LoginViewModel _loginVM;
         private RegisterViewModel _registerVM;
+        private IServerCommunication _communication;
 
         public WelcomeViewModel(
             LoginViewModel loginVM,
@@ -21,16 +22,21 @@ namespace KlientTCP.ViewModels
         {
             _loginVM = loginVM;
             _registerVM = registerVM;
-            communication.GetMessage();
+            _communication = communication;
+            _communication.GetMessage();
         }
 
         public void LoadLoginPage()
         {
+            _communication.SendMessage("cancel");
+            _communication.GetMessage();
             ActivateItem(_loginVM);
         }
 
         public void LoadRegisterPage()
         {
+            _communication.SendMessage("cancel");
+            _communication.GetMessage();
             ActivateItem(_registerVM);
         }
     }

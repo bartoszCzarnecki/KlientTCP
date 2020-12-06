@@ -11,7 +11,8 @@ namespace KlientTCP.Events
     {
         public LogoutEvent(IServerCommunication communication)
         {
-            communication.SendMessage("cancel");
+            communication.SendMessage("4");
+            communication.GetMessage();
         }
     }
 }

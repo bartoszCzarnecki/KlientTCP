@@ -26,7 +26,7 @@ namespace KlientTCP.ViewModels
         {
             if (_authenticator.DeleteAccount(_communication))
             {
-                _aggregator.PublishOnUIThread(new LogoutEvent());
+                _aggregator.PublishOnUIThread(new LogoutEvent(_communication));
             }
         }
 

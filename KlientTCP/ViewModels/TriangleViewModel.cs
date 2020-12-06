@@ -15,10 +15,12 @@ namespace KlientTCP.ViewModels
         private string _c;
         private string _result;
         private IServerCommunication _communication;
+        private IMathOperation _mathOperation;
 
-        public TriangleViewModel(IServerCommunication communication)
+        public TriangleViewModel(IServerCommunication communication, IMathOperation mathOperation)
         {
             _communication = communication;
+            _mathOperation = mathOperation;
         }
 
         public string A
@@ -63,12 +65,7 @@ namespace KlientTCP.ViewModels
 
         public void HandleButtonClick()
         {
-            /* Kod, który zostanie wywołany po wcisnieciu przycisku
-             * Proponuje stworzyc nowy serwis na przykladzie `Authenticator`
-             * I trzeba będzie go dodac tak samo w pliku Bootstrapper.cs
-             */
-
-            Result = "Trójkat ostrokątny";
+            Result = _mathOperation.TriangleType(A + " " + B + " " + C, _communication);
 
         }
     }
