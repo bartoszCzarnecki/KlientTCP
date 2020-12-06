@@ -10,18 +10,40 @@ namespace KlientTCP.Services
     public class Authenticator : IAuthenticator
     {
         private User _currentUser;
-        public bool Login(string username, string password)
+        public bool Login(string username, string password, IServerCommunication communication)
         {
-            // Tu dodaj logike logowania
-            _currentUser = new User(username, password);
-            return true;
+            communication.SendMessage("1");
+            communication.GetMessage();
+            communication.SendMessage(username + " " + password);
+            string msg = communication.GetMessage().Substring(0, 5);
+            if (msg == "Ktora")
+            {
+                _currentUser = new User(username, password);
+                return true;
+            }
+            else
+            {
+                // Error
+                return false;
+            }
         }
 
-        public bool Register(string username, string password)
+        public bool Register(string username, string password, IServerCommunication communication)
         {
-            // Tu dodaj logike rejestracji
-            _currentUser = new User(username, password);
-            return true;
+            communication.SendMessage("2");
+            communication.GetMessage();
+            communication.SendMessage(username + " " + password);
+            string msg = communication.GetMessage().Substring(0, 5);
+            if (msg == "Ktora")
+            {
+                _currentUser = new User(username, password);
+                return true;
+            }
+            else
+            {
+                // Error
+                return false;
+            }
         }
 
         public bool ChangePassword(string username, string password)

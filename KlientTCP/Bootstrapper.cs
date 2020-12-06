@@ -38,7 +38,8 @@ namespace KlientTCP
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IAuthenticator, Authenticator>();
+                .Singleton<IAuthenticator, Authenticator>()
+                .Singleton<IServerCommunication, ServerCommunication>();
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)

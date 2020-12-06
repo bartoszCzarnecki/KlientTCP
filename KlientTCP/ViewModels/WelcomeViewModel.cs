@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using System;
+using KlientTCP.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,13 @@ namespace KlientTCP.ViewModels
 
         public WelcomeViewModel(
             LoginViewModel loginVM,
-            RegisterViewModel registerVM
+            RegisterViewModel registerVM,
+            IServerCommunication communication
             )
         {
             _loginVM = loginVM;
             _registerVM = registerVM;
+            communication.GetMessage();
         }
 
         public void LoadLoginPage()

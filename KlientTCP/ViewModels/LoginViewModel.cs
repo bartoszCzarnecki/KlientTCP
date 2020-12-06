@@ -17,11 +17,13 @@ namespace KlientTCP.ViewModels
         private string _error;
         private IAuthenticator _authenticator;
         private IEventAggregator _aggregator;
+        private IServerCommunication _communication;
 
-        public LoginViewModel(IAuthenticator authenticator, IEventAggregator aggregator)
+        public LoginViewModel(IAuthenticator authenticator, IEventAggregator aggregator, IServerCommunication communication)
         {
             _authenticator = authenticator;
             _aggregator = aggregator;
+            _communication = communication;
         }
 
         public string Username
@@ -64,7 +66,7 @@ namespace KlientTCP.ViewModels
             } else
             {
                 // Wywoływanie metody Login z serwisu Authenticator
-                if (_authenticator.Login(Username, Password))
+                if (_authenticator.Login(Username, Password, _communication))
                 {
                     // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());

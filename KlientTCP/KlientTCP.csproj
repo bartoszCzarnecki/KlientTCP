@@ -77,6 +77,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\Authenticator.cs" />
     <Compile Include="Services\IAuthenticator.cs" />
+    <Compile Include="Services\IServerCommunication.cs" />
+    <Compile Include="Services\ServerCommunication.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />

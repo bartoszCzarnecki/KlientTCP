@@ -16,11 +16,13 @@ namespace KlientTCP.ViewModels
         private string _error;
         private IAuthenticator _authenticator;
         private IEventAggregator _aggregator;
+        private IServerCommunication _communication;
 
-        public RegisterViewModel(IAuthenticator authenticator, IEventAggregator aggregator)
+        public RegisterViewModel(IAuthenticator authenticator, IEventAggregator aggregator, IServerCommunication communication)
         {
             _authenticator = authenticator;
             _aggregator = aggregator;
+            _communication = communication;
         }
 
         public string Username
@@ -64,7 +66,7 @@ namespace KlientTCP.ViewModels
             else
             {
                 // Wywoływanie metody Register z serwisu Authenticator
-                if (_authenticator.Register(Username, Password))
+                if (_authenticator.Register(Username, Password, _communication))
                 {
                     // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
