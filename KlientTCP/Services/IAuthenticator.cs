@@ -5,10 +5,8 @@
         bool IsLoggedIn { get; }
 
         bool Login(string username, string password);
+
         bool Register(string username, string password);
 
-        bool ChangePassword(string password);
-
-        bool DeleteAccount();
     }
 }

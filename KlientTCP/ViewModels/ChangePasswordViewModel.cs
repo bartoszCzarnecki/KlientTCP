@@ -64,7 +64,7 @@ namespace KlientTCP.ViewModels
             }
             else
             {
-                _authenticator.ChangePassword(Password);
+                // _authenticator.ChangePassword(Password);
             }
         }
     }

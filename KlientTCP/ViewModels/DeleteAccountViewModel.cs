@@ -22,10 +22,11 @@ namespace KlientTCP.ViewModels
 
         public void HandleYesButtonClick()
         {
-            if (_authenticator.DeleteAccount())
+           /* if (_authenticator.DeleteAccount())
             {
                 _aggregator.PublishOnUIThread(new LogoutEvent());
             }
+           */
         }
 
         public void HandleNoButtonClick()

@@ -24,17 +24,6 @@ namespace KlientTCP.Services
             return true;
         }
 
-        public bool ChangePassword(string password)
-        {
-            // TODO
-            return true;
-        }
-
-        public bool DeleteAccount()
-        {
-            return true;
-        }
-
         public bool IsLoggedIn => _currentUser != null;
     }
 }
