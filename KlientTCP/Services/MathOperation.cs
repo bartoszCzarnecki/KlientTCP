@@ -11,8 +11,12 @@ namespace KlientTCP.Services
 
         public string TriangleType(string values, IServerCommunication communication)
         {
-            communication.SendMessage("2");
+
             string msg = communication.GetMessage();
+            communication.SendMessage("get_status");
+            if (communication.GetMessage() != "triangle")
+                communication.SendMessage("2");
+            msg = communication.GetMessage();
             communication.SendMessage(values);
             msg = communication.GetMessage();
             return msg;

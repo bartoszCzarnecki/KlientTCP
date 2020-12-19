@@ -72,8 +72,8 @@ namespace KlientTCP.ViewModels
                     _aggregator.PublishOnUIThread(new LoginEvent());
                 } else
                 {
-                    Error = "Server error, please try again";
-                }
+                    Error = "Username already taken";
+                } 
             }
         }
     }

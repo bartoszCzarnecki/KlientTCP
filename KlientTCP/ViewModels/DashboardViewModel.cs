@@ -34,22 +34,28 @@ namespace KlientTCP.ViewModels
 
         public void LoadTrianglePage()
         {
-            // _communication.SendMessage("cancel");
-            _communication.GetMessage();
+            string msg = _communication.GetMessage();
+            _communication.SendMessage("get_status");
+            if (_communication.GetMessage() != "menu")
+                _communication.SendMessage("cancel");
             ActivateItem(_triangleVM);
         }
 
         public void LoadChangePasswordPage()
         {
-            // _communication.SendMessage("cancel");
             _communication.GetMessage();
+            _communication.SendMessage("get_status");
+            if (_communication.GetMessage() != "menu")
+                _communication.SendMessage("cancel");
             ActivateItem(_changePasswordVM);
         }
 
         public void LoadDeleteAccountPage()
         {
-            // _communication.SendMessage("cancel");
             _communication.GetMessage();
+            _communication.SendMessage("get_status");
+            if (_communication.GetMessage() != "menu")
+                _communication.SendMessage("cancel");
             ActivateItem(_deleteAccountVM);
         }
 

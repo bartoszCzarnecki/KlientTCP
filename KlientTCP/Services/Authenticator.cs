@@ -12,11 +12,18 @@ namespace KlientTCP.Services
         private User _currentUser;
         public bool Login(string username, string password, IServerCommunication communication)
         {
-            communication.SendMessage("1");
             communication.GetMessage();
+            communication.SendMessage("1");
+            if (communication.GetMessage() != "ok")
+            {
+                communication.SendMessage("cancel");
+                communication.GetMessage();
+                communication.SendMessage("1");
+                communication.GetMessage();
+            }
             communication.SendMessage(username + " " + password);
-            string msg = communication.GetMessage().Substring(0, 5);
-            if (msg == "Ktora")
+            string msg = communication.GetMessage();
+            if (msg == "ok")
             {
                 _currentUser = new User(username, password);
                 return true;
@@ -30,11 +37,18 @@ namespace KlientTCP.Services
 
         public bool Register(string username, string password, IServerCommunication communication)
         {
-            communication.SendMessage("2");
             communication.GetMessage();
+            communication.SendMessage("2");
+            if (communication.GetMessage() != "ok")
+            {
+                communication.SendMessage("cancel");
+                communication.GetMessage();
+                communication.SendMessage("2");
+                communication.GetMessage();
+            }
             communication.SendMessage(username + " " + password);
-            string msg = communication.GetMessage().Substring(0, 5);
-            if (msg == "Ktora")
+            string msg = communication.GetMessage();
+            if (msg == "ok")
             {
                 _currentUser = new User(username, password);
                 return true;
@@ -51,8 +65,8 @@ namespace KlientTCP.Services
             communication.SendMessage("1");
             communication.GetMessage();
             communication.SendMessage(_currentUser.Password + " " + password);
-            string msg = communication.GetMessage().Substring(0, 5);
-            if (msg == "Ktora")
+            string msg = communication.GetMessage();
+            if (msg == "ok")
             {
                 _currentUser.Password = password;
                 return true;

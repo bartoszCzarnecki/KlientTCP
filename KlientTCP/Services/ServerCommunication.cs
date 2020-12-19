@@ -28,8 +28,6 @@ namespace KlientTCP.Services
         {
             byte[] encoded = new ASCIIEncoding().GetBytes(message);
             client.GetStream().Write(encoded, 0, message.Length);
-            client.GetStream().Write(encoded, 0, message.Length); //
-            // Wysylanie kolejnej wiadomosci, poniewaz serwer ma byc kompatybilny rowniez z interfejsem tekstowym
         }
 
         public string GetMessage()
@@ -40,7 +38,7 @@ namespace KlientTCP.Services
                 stream.ReadTimeout = 200;
                 byte[] buffer = new byte[buffer_size];
                 int msg_len = stream.Read(buffer, 0, buffer_size);
-                string msg = System.Text.Encoding.UTF8.GetString(buffer);
+                string msg = System.Text.Encoding.UTF8.GetString(buffer).Replace("\0", string.Empty);
                 Array.Clear(buffer, 0, buffer_size);
                 return msg;
             } catch(IOException e)
