@@ -22,6 +22,7 @@ namespace KlientTCP.Services
                 communication.GetMessage();
             }
             communication.SendMessage(username + " " + password);
+            System.Threading.Thread.Sleep(500);
             string msg = communication.GetMessage();
             if (msg == "ok")
             {
@@ -47,6 +48,7 @@ namespace KlientTCP.Services
                 communication.GetMessage();
             }
             communication.SendMessage(username + " " + password);
+            System.Threading.Thread.Sleep(500);
             string msg = communication.GetMessage();
             if (msg == "ok")
             {
@@ -65,6 +67,7 @@ namespace KlientTCP.Services
             communication.SendMessage("1");
             communication.GetMessage();
             communication.SendMessage(_currentUser.Password + " " + password);
+            System.Threading.Thread.Sleep(500);
             string msg = communication.GetMessage();
             if (msg == "ok")
             {
