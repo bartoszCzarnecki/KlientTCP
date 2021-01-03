@@ -27,8 +27,8 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25">TCP Client</TextBlock>
-            <Button Grid.Column="6" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadLoginPage">Login</Button>
-            <Button Grid.Column="7" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadRegisterPage">Register</Button>
+            <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="6" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadLoginPage">Login</Button>
+            <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="7" Grid.Row="1" FontSize="20" Margin="5" Padding="3" x:Name="LoadRegisterPage">Register</Button>
 
             <ContentControl x:Name="ActiveItem" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="7"/>
         </Grid>

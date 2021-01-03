@@ -70,6 +70,8 @@ namespace KlientTCP.ViewModels
                 {
                     // Wywolywanie eventu, zeby zmienic widok w aplikacji
                     _aggregator.PublishOnUIThread(new LoginEvent());
+                    Username = "";
+                    Password = "";
                 } else
                 {
                     Error = "Username already taken";

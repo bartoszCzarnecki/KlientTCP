@@ -26,10 +26,10 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">User Dashboard</TextBlock>
-        <Button Grid.Column="3" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadTrianglePage">Triangles</Button>
-        <Button Grid.Column="4" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadChangePasswordPage">Change Password</Button>
-        <Button Grid.Column="5" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadDeleteAccountPage">Delete Account</Button>
-        <Button Grid.Column="6" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="Logout">Logout</Button>
+        <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="3" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadTrianglePage">Triangles</Button>
+        <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="4" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadChangePasswordPage">Change Password</Button>
+        <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="5" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="LoadDeleteAccountPage">Delete Account</Button>
+        <Button BorderThickness="0" Background="#333" Foreground="#fff" Grid.Column="6" Grid.Row="1" FontSize="15" Margin="5" Padding="3" x:Name="Logout">Logout</Button>
 
         <ContentControl x:Name="ActiveItem" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6"/>
     </Grid>

@@ -70,6 +70,9 @@ namespace KlientTCP.ViewModels
             if (IsInteger(A) && IsInteger(B) && IsInteger(C))
             {
                 Result = _mathOperation.TriangleType(A + " " + B + " " + C, _communication);
+                A = "";
+                B = "";
+                C = "";
             } else
             {
                 Result = "A, B and C must be integers";
